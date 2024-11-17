@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+#  server:
+#    container_name: p2b-server
+#    working_dir: /server
+#    build:
+#      context: .
+#    volumes:
+#      - .:/server
+#    ports:
+#      - "8080:8080"
+
+  postgres:
+    container_name: p2b-postgres
+    image: postgres:16.1-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: p2b_db
+      POSTGRES_USER: p2b
+      POSTGRES_PASSWORD: secret
