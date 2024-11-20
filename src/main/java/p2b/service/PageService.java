@@ -1,8 +1,8 @@
 package p2b.service;
 
 import org.springframework.data.domain.Page;
-import p2b.DTO.PageCreateDto;
-import p2b.DTO.PageUpdateDto;
+import p2b.dto.PageCreateDto;
+import p2b.dto.PageUpdateDto;
 import p2b.entity.PageEntity;
 
 

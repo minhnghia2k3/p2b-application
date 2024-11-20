@@ -1,6 +1,5 @@
 package p2b.service;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -8,16 +7,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import p2b.DTO.PageCreateDto;
-import p2b.DTO.PageUpdateDto;
+import p2b.dto.PageCreateDto;
+import p2b.dto.PageUpdateDto;
 import p2b.entity.PageEntity;
 import p2b.entity.Status;
 import p2b.exception.PageNotFoundException;
 import p2b.repository.PageRepository;
 import p2b.utils.PageableUtil;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

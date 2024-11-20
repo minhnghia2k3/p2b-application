@@ -1,4 +1,4 @@
-package p2b.DTO;
+package p2b.dto;
 
 public class ApiResponse<T> {
     private int code;

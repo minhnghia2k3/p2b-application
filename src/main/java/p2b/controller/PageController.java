@@ -7,15 +7,13 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import p2b.DTO.ApiResponse;
-import p2b.DTO.PageCreateDto;
-import p2b.DTO.PageUpdateDto;
+import p2b.dto.ApiResponse;
+import p2b.dto.PageCreateDto;
+import p2b.dto.PageUpdateDto;
 import p2b.entity.PageEntity;
 import p2b.service.PageService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/pages")
