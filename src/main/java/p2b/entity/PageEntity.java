@@ -3,6 +3,7 @@ package p2b.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity(name = "page")
 public class PageEntity {
@@ -24,6 +25,9 @@ public class PageEntity {
 
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "page")
+    private Set<BookEntity> books;
 
     /* for testing */
     public PageEntity(long id, long owner, String title, Status status, String pageContent) {

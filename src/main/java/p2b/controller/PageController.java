@@ -12,6 +12,7 @@ import p2b.dto.PageCreateDto;
 import p2b.dto.PageUpdateDto;
 import p2b.entity.PageEntity;
 import p2b.service.PageService;
+import p2b.utils.PageableUtil;
 
 import java.util.List;
 
@@ -39,13 +40,7 @@ public class PageController {
 
         Page<PageEntity> list = pageService.listUserPages(page, pageSize, sort, search);
 
-        ApiResponse<List<PageEntity>> response = new ApiResponse<>();
-        response.setCode(HttpStatus.OK.value());
-        response.setMessage(HttpStatus.OK.getReasonPhrase());
-        response.setCurrentPage(list.getNumber() + 1);
-        response.setCount(list.getNumberOfElements());
-        response.setTotalPages(list.getTotalPages());
-        response.setData(list.getContent());
+        var response = PageableUtil.prepareResponse(list);
 
         return ResponseEntity.ok(response);
     }
@@ -69,7 +64,7 @@ public class PageController {
     @DeleteMapping("/{pageId}")
     public ResponseEntity<Object> deletePage(@PathVariable long pageId) {
         pageService.deletePage(pageId);
-        return new ResponseEntity<>(new ResponseEntity<>(HttpStatus.NO_CONTENT), HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }
