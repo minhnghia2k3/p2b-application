@@ -3,7 +3,10 @@ package p2b.service;
 import org.springframework.data.domain.Page;
 
 public interface BaseService<T, S, U> {
-    Page<T> findAll(int page, int limit, String sort, String search);
+    default Page<T> findAll(int page, int limit, String sort, String search){
+        System.out.printf("Class %s is not implemented yet", this.getClass().getSimpleName());
+        return null;
+    }
 
     T findById(long id);
 
