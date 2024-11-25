@@ -15,6 +15,7 @@ public class PageEntity {
 
     private String title;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @Column(name = "page_content")
